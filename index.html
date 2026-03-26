@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - France Indoor 2026</title>
+
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="min-h-screen bg-white">
+
+    <!-- ======================= -->
+    <!-- HEADER : Logos + Titre  -->
+    <!-- ======================= -->
+    <header class="bg-ffrs-blue text-white">
+        <div class="container mx-auto px-4">
+
+            <!-- MOBILE : Layout compact -->
+            <div class="flex md:hidden flex-col items-center py-3 gap-2">
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://ffroller-skateboard.fr" target="_blank" rel="noopener">
+                        <img src="images/logo_ffrs_horizontal_blanc.png"
+                             alt="Logo FFRS"
+                             class="h-8 w-auto">
+                    </a>
+                    <a href="index.html">
+                        <div class="w-12 h-12 rounded-full border border-black overflow-hidden bg-white">
+                            <img src="images/logo-france-indoor.jpg"
+                                 alt="Logo France Indoor"
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </a>
+                </div>
+
+                <a href="index.html" class="text-center no-underline">
+                    <span class="block font-bold shimmer-text text-sm leading-tight">
+                        CHAMPIONNAT DE FRANCE MARATHON
+                    </span>
+                    <span class="block font-bold shimmer-text text-xs leading-tight">
+                        ROLLER COURSE 2026
+                    </span>
+                </a>
+            </div>
+
+            <!-- DESKTOP : Layout 3 colonnes -->
+            <div class="hidden md:flex items-center justify-between py-4 gap-4">
+
+                <a href="https://ffroller-skateboard.fr" target="_blank" rel="noopener" class="flex-shrink-0">
+                    <img src="images/logo_ffrs_horizontal_blanc.png"
+                         alt="Logo FFRS"
+                         class="h-16 lg:h-20 w-auto">
+                </a>
+
+                <a href="index.html" class="flex-1 text-center no-underline">
+                    <span class="block font-bold shimmer-text text-lg lg:text-2xl leading-tight">
+                        CHAMPIONNAT DE FRANCE MARATHON
+                    </span>
+                    <span class="block font-bold shimmer-text text-base lg:text-xl leading-tight">
+                        ROLLER COURSE
+                    </span>
+                    <span class="block font-bold shimmer-text text-base lg:text-xl leading-tight mt-1">
+                        2026
+                    </span>
+                </a>
+
+                <a href="index.html" class="flex-shrink-0">
+                    <div class="w-20 h-20 lg:w-28 lg:h-28 rounded-full border border-black overflow-hidden bg-white">
+                        <img src="images/logo-france-indoor.jpg"
+                             alt="Logo France Indoor"
+                             class="w-full h-full object-cover">
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================= -->
+    <!-- NAV : Navigation        -->
+    <!-- ======================= -->
+    <nav class="bg-blue-900 text-white" x-data="{ mobileMenuOpen: false }">
+        <div class="container mx-auto px-4">
+
+            <!-- DESKTOP -->
+            <div class="hidden md:flex items-center justify-center gap-6 lg:gap-8 py-3">
+                <a href="index.html" class="text-white hover:text-orange-300 transition font-medium text-orange-400 font-semibold">
+                    Accueil
+                </a>
+                <a href="programme.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Programme
+                </a>
+                <a href="resultats.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Résultats
+                </a>
+                <a href="photos.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Photos
+                </a>
+                <a href="infos-pratiques.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Infos Pratiques
+                </a>
+                <a href="espace-presse-clubs.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Espace Presse/Clubs
+                </a>
+            </div>
+
+            <!-- MOBILE -->
+            <div class="flex md:hidden justify-between items-center py-2">
+                <span class="font-semibold text-sm">Menu</span>
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                        class="p-2 hover:bg-blue-800 rounded transition"
+                        aria-label="Ouvrir le menu"
+                        :aria-expanded="mobileMenuOpen">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path x-show="mobileMenuOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div x-show="mobileMenuOpen"
+                 x-cloak
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 -translate-y-2"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 translate-y-0"
+                 x-transition:leave-end="opacity-0 -translate-y-2"
+                 class="pb-4 space-y-1">
+                <a href="index.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition bg-blue-800 font-semibold">
+                    Accueil
+                </a>
+                <a href="programme.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Programme
+                </a>
+                <a href="resultats.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Résultats
+                </a>
+                <a href="photos.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Photos
+                </a>
+                <a href="infos-pratiques.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Infos Pratiques
+                </a>
+                <a href="espace-presse-clubs.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Espace Presse/Clubs
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ======================= -->
+    <!-- MAIN : Contenu          -->
+    <!-- ======================= -->
+    <main>
+
+        <div class="bg-gradient-to-r from-green-600 to-green-500 text-white py-3">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-sm font-bold">
+                    ✅ Compétition terminée —
+                    <a href="resultats.html" class="underline hover:no-underline">Consultez tous les résultats</a>
+                </p>
+            </div>
+        </div>
+
+        <section class="relative h-[350px] sm:h-[450px] lg:h-[650px] overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
+            <img src="images/hero.jpg" alt="Championnat de France Indoor 2026" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 z-20 flex flex-col items-center justify-end pb-6 sm:pb-10 px-4 text-white text-center">
+                <h1 class="text-xl sm:text-3xl lg:text-4xl font-black mb-2 drop-shadow-lg">Championnat de France Indoor 2026</h1>
+                <p class="text-sm sm:text-base lg:text-lg drop-shadow mb-4 sm:mb-5">21-22 février • Saint-Michel-sur-Orge • Entrée gratuite</p>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="resultats.html" class="bg-white text-ffrs-blue px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg font-bold no-underline flex items-center justify-center gap-2 hover:bg-gray-100 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        Voir les résultats
+                    </a>
+                    <a href="programme.html" class="bg-red-500/90 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg font-bold no-underline border-2 border-white flex items-center justify-center gap-2 hover:bg-red-600 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        Programme
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <p class="text-center text-gray-500 text-[11px] py-1.5 bg-gray-100">© Photo : Fontaine Family</p>
+        <div class="flex h-1.5">
+            <div class="flex-1 bg-ffrs-blue"></div>
+            <div class="flex-1 bg-white"></div>
+            <div class="flex-1 bg-ffrs-red"></div>
+        </div>
+
+        <!-- 4 CARDS -->
+        <section class="bg-white py-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+
+                    <a href="resultats.html" class="group block">
+                        <div class="relative h-[140px] sm:h-[180px] lg:h-[220px] rounded-xl overflow-hidden shadow-md">
+                            <img src="images/podium.jpg" alt="Résultats" class="w-full h-full object-cover object-[center_40%] group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+                                <div class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                    <span class="text-xs sm:text-sm font-bold">Résultats</span>
+                                </div>
+                                <p class="text-[10px] sm:text-xs text-gray-300 mt-0.5 hidden sm:block">Classements par catégorie</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="programme.html" class="group block">
+                        <div class="relative h-[140px] sm:h-[180px] lg:h-[220px] rounded-xl overflow-hidden shadow-md">
+                            <img src="images/echauffement-11-bouguenais.jpg" alt="Programme" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+                                <div class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span class="text-xs sm:text-sm font-bold">Programme</span>
+                                </div>
+                                <p class="text-[10px] sm:text-xs text-gray-300 mt-0.5 hidden sm:block">Horaires samedi et dimanche</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="infos-pratiques.html" class="group block">
+                        <div class="relative h-[140px] sm:h-[180px] lg:h-[220px] rounded-xl overflow-hidden shadow-md">
+                            <img src="images/carte-infos-pratiques.png" alt="Infos Pratiques" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+                                <div class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-xs sm:text-sm font-bold leading-tight">Infos Pratiques</span>
+                                </div>
+                                <p class="text-[10px] sm:text-xs text-gray-300 mt-0.5 hidden sm:block">Accès, hébergement</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="espace-presse-clubs.html" class="group block">
+                        <div class="relative h-[140px] sm:h-[180px] lg:h-[220px] rounded-xl overflow-hidden shadow-md">
+                            <img src="images/journaliste-club.png" alt="Presse & Clubs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-3 text-white">
+                                <div class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                                    </svg>
+                                    <span class="text-xs sm:text-sm font-bold leading-tight">Presse & Clubs</span>
+                                </div>
+                                <p class="text-[10px] sm:text-xs text-gray-300 mt-0.5 hidden sm:block">Accréditations, dossier presse</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- L'ÉVÉNEMENT EN IMAGES -->
+        <section class="bg-white py-8 sm:py-10">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-ffrs-blue mb-6 sm:mb-8 text-center">L'événement en images</h2>
+
+                <div class="flex flex-col lg:flex-row rounded-xl overflow-hidden shadow-xl mb-6">
+                    <div class="lg:w-2/5 h-[200px] lg:h-[280px]">
+                        <img src="images/maiwenn-romane.jpg"
+                             alt="Patineuses en course"
+                             class="w-full h-full object-cover object-[center_35%]">
+                    </div>
+                    <div class="lg:w-3/5 bg-ffrs-blue p-6 sm:p-8 flex flex-col justify-center text-white">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs font-medium uppercase tracking-wider">📷 Galerie Photo</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3">Photos de l'événement</h3>
+                        <p class="text-white/90 text-sm mb-5 leading-relaxed">
+                            Retrouvez toutes les photos du Championnat de France Indoor 2026, classées par compétition et par photographe.
+                        </p>
+                        <a href="photos.html"
+                           class="inline-block bg-white text-ffrs-blue px-5 py-2.5 rounded-lg font-bold no-underline text-sm w-fit hover:bg-gray-100 transition">
+                            Voir les photos →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Photographes -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative h-[200px] sm:h-[250px]">
+                            <img src="images/appareil-photo-piste.png"
+                                 alt="Photographes"
+                                 class="w-full h-full object-cover">
+                            <div class="absolute bottom-3 left-3 bg-white px-3 py-1.5 rounded-md text-xs font-bold flex items-center gap-1.5">
+                                📷 5 photographes officiels
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-lg sm:text-xl font-bold text-ffrs-blue mb-2">Photographes</h4>
+                            <p class="text-sm text-gray-500 mb-4">Retrouvez vos photos de course sur les réseaux de nos photographes partenaires.</p>
+
+                            <div class="flex flex-wrap gap-3">
+
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-semibold text-sm">Alicialbum</span>
+                                    <a href="https://www.facebook.com/people/Alicialbum/61572809497333/" target="_blank" rel="noopener" class="p-1 text-blue-600 hover:text-blue-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/alicialbum/" target="_blank" rel="noopener" class="p-1 text-pink-600 hover:text-pink-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    </a>
+                                </div>
+
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-semibold text-sm">Fontaine Family</span>
+                                    <a href="https://www.facebook.com/people/Fontaine-family/100083297351343/" target="_blank" rel="noopener" class="p-1 text-blue-600 hover:text-blue-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/fontainefamily/" target="_blank" rel="noopener" class="p-1 text-pink-600 hover:text-pink-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    </a>
+                                </div>
+
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-semibold text-sm">Alain Cristol</span>
+                                    <a href="https://www.facebook.com/groups/344409122696555/" target="_blank" rel="noopener" class="p-1 text-blue-600 hover:text-blue-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/acrphot/" target="_blank" rel="noopener" class="p-1 text-pink-600 hover:text-pink-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    </a>
+                                </div>
+
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-semibold text-sm">Olivier Lemaître</span>
+                                    <a href="https://www.facebook.com/oli.man.129" target="_blank" rel="noopener" class="p-1 text-blue-600 hover:text-blue-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/olivierlemaitre72/" target="_blank" rel="noopener" class="p-1 text-pink-600 hover:text-pink-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    </a>
+                                </div>
+
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-semibold text-sm">Kiarafoto91</span>
+                                    <a href="https://www.facebook.com/gerard.brunoy.7" target="_blank" rel="noopener" class="p-1 text-blue-600 hover:text-blue-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/photographe_qui_dechire/" target="_blank" rel="noopener" class="p-1 text-pink-600 hover:text-pink-800">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exposants -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                        <div class="relative h-[200px] sm:h-[250px]">
+                            <img src="images/stand-expo.png" alt="Village Exposants" class="w-full h-full object-cover">
+                            <div class="absolute bottom-3 left-3 bg-orange-500 text-white px-3 py-1.5 rounded-md text-xs font-bold">
+                                🛒 Village exposants
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-lg sm:text-xl font-bold text-ffrs-blue mb-2">Exposants & Boutiques</h4>
+                            <p class="text-sm text-gray-500 mb-4">Équipement, accessoires... Retrouvez nos partenaires dans le hall.</p>
+
+                            <div class="space-y-3">
+                                <a href="https://www.sierra-shoes.com/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition no-underline">
+                                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                                        <img src="images/partenaires/sierra.png" alt="Sierra" class="max-w-full max-h-full object-contain">
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-gray-700 block">SIERRA SHOES</span>
+                                        <span class="text-xs text-gray-500">Chaussures & équipement roller</span>
+                                    </div>
+                                </a>
+
+                                <a href="https://www.ligne-droite-roller.com/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition no-underline">
+                                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                                        <img src="images/partenaires/lignedroite.png" alt="Ligne Droite" class="max-w-full max-h-full object-contain">
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-gray-700 block">LIGNE DROITE ROLLER</span>
+                                        <span class="text-xs text-gray-500">Équipement roller vitesse</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉCÉNAT -->
+        <section class="bg-gray-100 py-8 sm:py-10">
+            <div class="container mx-auto px-4">
+                <div class="bg-white border-2 border-ffrs-blue rounded-xl p-6 sm:p-8 text-center">
+                    <h3 class="text-lg sm:text-xl font-bold text-ffrs-blue mb-4">
+                        ❤️ Devenez mécène du Championnat de France Indoor 2026 ❤️
+                    </h3>
+                    <p class="text-gray-700 mb-4">
+                        <span class="font-bold text-red-600 text-lg">66%</span> de déduction fiscale •
+                        Un don de <strong>50€</strong> ne vous coûte que <strong class="text-red-600">17€</strong>
+                    </p>
+                    <div class="text-gray-700 mb-6 text-sm sm:text-base">
+                        <p class="mb-1">✔ Votre nom affiché sur le <strong>mur des donateurs</strong></p>
+                        <p>✔ <strong>À partir de 50€</strong> : un dossard de remerciement dédicacé</p>
+                    </div>
+                    <iframe id="haWidgetButton"
+                            allowtransparency="true"
+                            src="https://www.helloasso.com/associations/cs-bretigny-roller-sports/formulaires/2/widget-bouton"
+                            class="w-full max-w-[300px] h-[70px] border-none mx-auto block"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTENAIRES -->
+        <section class="bg-white py-8 sm:py-10">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-ffrs-blue mb-6 text-center">Partenaires</h2>
+
+                <div class="bg-gray-100 border-2 border-ffrs-blue rounded-xl p-6 sm:p-8">
+
+                    <h3 class="text-base sm:text-lg font-bold text-ffrs-blue mb-6 text-center">Partenaires institutionnels</h3>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mb-8">
+                        <a href="https://ffroller-skateboard.fr" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/ffrs.png" alt="FFRS" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://ffroller-skateboard.fr" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/ffrsidf.png" alt="Ligue IDF" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.iledefrance.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/iledefrance.png" alt="Région IDF" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.essonne.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/essonne.png" alt="Essonne" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.coeuressonne.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/coeuressonneagglo.png" alt="Cœur d'Essonne" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.saintmichelsurorge.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/saintmichelsurorge.png" alt="Saint-Michel-sur-Orge" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.bretigny91.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/bretignysurorge.png" alt="Brétigny-sur-Orge" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.sgdb91.com/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/sgdb.png" alt="Sainte-Geneviève-des-Bois" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.ville-breuillet.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/breuillet.png" alt="Breuillet" class="max-h-full max-w-full object-contain">
+                        </a>
+                    </div>
+
+                    <hr class="border-ffrs-blue mb-8">
+
+                    <h3 class="text-base sm:text-lg font-bold text-ffrs-blue mb-6 text-center">Partenaires privés</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+                        <a href="https://www.ebuyclub.com/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/ebuyclub.png" alt="eBuyClub" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.mapetitesponso.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/mapetitesponso.png" alt="Ma Petite Sponso" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://werise.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/werise.png" alt="We Rise" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.creditmutuel.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/creditmutuel.png" alt="Crédit Mutuel VDO" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://ildei.com" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/ildei.png" alt="ILDEI" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://dhrenovation.fr" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/dhrenovation.png" alt="DH Rénovation" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://imses.fr/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/imses.png" alt="IMSES" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.instagram.com/comptoirdemathildebretigny" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/comptoirdemathilde.png" alt="Le Comptoir de Mathilde" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.facebook.com/people/Latelier-vert-et-sens/61564638225721/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/fleuriste.png" alt="L'Atelier Vert et Sens" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://www.rollerenligne.com/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/rollerenligne.png" alt="Roller en Ligne" class="max-h-full max-w-full object-contain">
+                        </a>
+                        <a href="https://sportenfrance.com/" target="_blank" rel="noopener" class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/sportenfrance.png" alt="Sport en France" class="max-h-full max-w-full object-contain">
+                        </a>
+                    </div>
+
+                    <hr class="border-ffrs-blue mb-8">
+
+                    <h3 class="text-base sm:text-lg font-bold text-ffrs-blue mb-6 text-center">Clubs organisateurs</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mx-auto">
+                        <div class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/csb.png" alt="CSB" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/sgs.png" alt="SGS" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/lpol.png" alt="LPOL" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="flex items-center justify-center h-28 sm:h-32 rounded-lg p-3">
+                            <img src="images/partenaires/robb.png" alt="ROBB" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================= -->
+    <!-- FOOTER                  -->
+    <!-- ======================= -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-6 md:py-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6">
+
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Liens rapides</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-gray-300 hover:text-blue-400 transition-colors">Accueil</a></li>
+                        <li><a href="resultats.html" class="text-gray-300 hover:text-blue-400 transition-colors">Résultats</a></li>
+                        <li><a href="infos-pratiques.html" class="text-gray-300 hover:text-blue-400 transition-colors">Infos Pratiques</a></li>
+                        <li><a href="https://ffroller-skateboard.fr" target="_blank" rel="noopener" class="text-gray-300 hover:text-blue-400 transition-colors">FFRS - Fédération</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact & Réseaux sociaux</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        <strong class="text-blue-400">Email :</strong>
+                        <a href="mailto:contact@rollerfranceindoor.fr" class="text-gray-300 hover:underline break-all">
+                            contact@rollerfranceindoor.fr
+                        </a>
+                    </p>
+
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/rollerfranceindoor/"
+                           target="_blank"
+                           rel="noopener"
+                           class="text-gray-300 hover:text-pink-500 transition"
+                           aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.youtube.com/@rollerfranceindoor"
+                           target="_blank"
+                           rel="noopener"
+                           class="text-gray-300 hover:text-red-500 transition"
+                           aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.facebook.com/profile.php?id=61582929795793"
+                           target="_blank"
+                           rel="noopener"
+                           class="text-gray-300 hover:text-blue-500 transition"
+                           aria-label="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-700 pt-4 md:pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-gray-400 gap-2">
+                    <p>
+                        © 2026 France Indoor. Tous droits réservés.
+                        — Icônes : <a href="https://www.flaticon.com" target="_blank" rel="noopener" class="hover:underline">Freepik - Flaticon</a>
+                    </p>
+                    <p>
+                        Développé par Stéphane Le Meur · Propulsé par
+                        <a href="https://laravel.com" target="_blank" rel="noopener" class="text-red-400 hover:underline">Laravel</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

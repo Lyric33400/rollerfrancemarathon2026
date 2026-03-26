@@ -1,0 +1,94 @@
+/* Couleurs FFRS */
+.bg-ffrs-blue {
+    background-color: #003d82;
+}
+
+.text-ffrs-blue {
+    color: #003d82;
+}
+
+.bg-ffrs-red {
+    background-color: #e30613;
+}
+
+.text-ffrs-red {
+    color: #e30613;
+}
+
+/* Effet shimmer rouge sur le titre */
+.shimmer-text {
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffffff 40%,
+        rgba(227, 6, 19, 0.5) 50%,
+        #ffffff 60%,
+        #ffffff 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite alternate;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* Compensation header sticky pour ancres */
+section[id] {
+    scroll-margin-top: 60px;
+}
+
+/* Scroll smooth */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Live pulse animation */
+.live-pulse {
+    animation: pulse-live 2s infinite;
+}
+
+@keyframes pulse-live {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Alignement temps */
+.tabular-nums {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
+/* Troncature noms longs */
+.truncate-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Masquer scrollbar tout en gardant scroll */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Alpine */
+[x-cloak] {
+    display: none !important;
+}

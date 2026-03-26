@@ -3,115 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programme - France Indoor 2026</title>
-    
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Alpine -->
+    <title>Programme - France Marathon 2026</title>
+
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <style>
-        .bg-ffrs-blue { background-color: #003d82; }
-        .text-ffrs-blue { color: #003d82; }
-
-        .shimmer-text {
-            background: linear-gradient(90deg,#fff 0%,#fff 40%,rgba(227,6,19,0.5) 50%,#fff 60%,#fff 100%);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: shimmer 6s linear infinite alternate;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 0% 0; }
-            100% { background-position: 100% 0; }
-        }
-    </style>
 </head>
-
 <body class="min-h-screen bg-white">
 
-<!-- HEADER -->
-<header class="bg-ffrs-blue text-white">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- ======================= -->
+    <!-- HEADER : Logos + Titre  -->
+    <!-- ======================= -->
+    <header class="bg-ffrs-blue text-white">
+        <div class="container mx-auto px-4">
 
-        <img src="images/logo_ffrs_horizontal_blanc.png" 
-             class="h-12" alt="FFRS">
+            <!-- MOBILE : Layout compact -->
+            <div class="flex md:hidden flex-col items-center py-3 gap-2">
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://ffroller-skateboard.fr" target="_blank" rel="noopener">
+                        <img src="images/logo_ffrs_horizontal_blanc.png"
+                             alt="Logo FFRS"
+                             class="h-8 w-auto">
+                    </a>
+                    <a href="index.html">
+                        <div class="w-12 h-12 rounded-full border border-black overflow-hidden bg-white">
+                            <img src="images/logos/rsl.png"
+                                 alt="Logo RSL"
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </a>
+                </div>
 
-        <div class="text-center">
-            <h1 class="font-bold shimmer-text text-lg md:text-2xl">
-                CHAMPIONNAT DE FRANCE INDOOR
-            </h1>
-            <p class="shimmer-text text-sm md:text-lg">ROLLER COURSE 2026</p>
+                <a href="index.html" class="text-center no-underline">
+                    <span class="block font-bold shimmer-text text-sm leading-tight">
+                        CHAMPIONNAT DE FRANCE MARATHON
+                    </span>
+                    <span class="block font-bold shimmer-text text-xs leading-tight">
+                        ROLLER COURSE 2026
+                    </span>
+                </a>
+            </div>
+
+            <!-- DESKTOP : Layout 3 colonnes -->
+            <div class="hidden md:flex items-center justify-between py-4 gap-4">
+
+                <a href="https://ffroller-skateboard.fr" target="_blank" rel="noopener" class="flex-shrink-0">
+                    <img src="images/logo_ffrs_horizontal_blanc.png"
+                         alt="Logo FFRS"
+                         class="h-16 lg:h-20 w-auto">
+                </a>
+
+                <a href="index.html" class="flex-1 text-center no-underline">
+                    <span class="block font-bold shimmer-text text-lg lg:text-2xl leading-tight">
+                        CHAMPIONNAT DE FRANCE MARATHON
+                    </span>
+                    <span class="block font-bold shimmer-text text-base lg:text-xl leading-tight">
+                        ROLLER COURSE
+                    </span>
+                    <span class="block font-bold shimmer-text text-base lg:text-xl leading-tight mt-1">
+                        2026
+                    </span>
+                </a>
+
+                <a href="index.html" class="flex-shrink-0">
+                    <div class="w-20 h-20 lg:w-28 lg:h-28 rounded-full border border-black overflow-hidden bg-white">
+                        <img src="images/logos/rsl.png"
+                                 alt="Logo RSL"
+                             class="w-full h-full object-cover">
+                    </div>
+                </a>
+
+            </div>
         </div>
+    </header>
 
-        <img src="images/logo-france-indoor.jpg" 
-             class="h-12 rounded-full bg-white p-1" alt="France Indoor">
-    </div>
-</header>
+    <!-- ======================= -->
+    <!-- NAV : Navigation        -->
+    <!-- ======================= -->
+    <nav class="bg-blue-900 text-white" x-data="{ mobileMenuOpen: false }">
+        <div class="container mx-auto px-4">
 
-<!-- NAV -->
-<nav class="bg-blue-900 text-white" x-data="{ open:false }">
-    <div class="container mx-auto px-4">
+            <!-- DESKTOP -->
+            <div class="hidden md:flex items-center justify-center gap-6 lg:gap-8 py-3">
+                <a href="index.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Accueil
+                </a>
+                <a href="programme.html" class="text-white hover:text-orange-300 transition font-medium text-orange-400 font-semibold">
+                    Programme             
+                <a href="photos.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Photos
+                </a>
+                <a href="infos-pratiques.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Infos Pratiques
+                </a>
+                
+            </div>
 
-        <div class="hidden md:flex justify-center gap-6 py-3">
-            <a href="#" class="hover:text-orange-300">Accueil</a>
-            <a href="#" class="text-orange-400 font-semibold">Programme</a>
-            <a href="#" class="hover:text-orange-300">Résultats</a>
-            <a href="#" class="hover:text-orange-300">Photos</a>
+            <!-- MOBILE -->
+            <div class="flex md:hidden justify-between items-center py-2">
+                <span class="font-semibold text-sm">Menu</span>
+                <button @click="mobileMenuOpen = !mobileMenuOpen"
+                        class="p-2 hover:bg-blue-800 rounded transition"
+                        aria-label="Ouvrir le menu"
+                        :aria-expanded="mobileMenuOpen">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path x-show="mobileMenuOpen" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div x-show="mobileMenuOpen"
+                 x-cloak
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 -translate-y-2"
+                 x-transition:enter-end="opacity-100 translate-y-0"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 translate-y-0"
+                 x-transition:leave-end="opacity-0 -translate-y-2"
+                 class="pb-4 space-y-1">
+                <a href="index.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Accueil
+                </a>
+                <a href="programme.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition bg-blue-800 font-semibold">
+                    Programme               
+                <a href="photos.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Photos
+                </a>
+                <a href="infos-pratiques.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Infos Pratiques
+                </a>
+                
+            </div>
+
         </div>
+    </nav>
 
-        <div class="md:hidden flex justify-between py-2">
-            <span>Menu</span>
-            <button @click="open=!open">☰</button>
+    <!-- ======================= -->
+    <!-- MAIN : Contenu          -->
+    <!-- ======================= -->
+    <main>
+        <section class="bg-ffrs-blue text-white py-8 md:py-12 text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-2xl md:text-4xl lg:text-5xl font-black uppercase">Programme</h1>
+                <p class="text-sm md:text-lg mt-2 md:mt-4">Horaires des courses - 21 & 22 février 2026</p>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 py-8 md:py-12">
+            <div class="max-w-4xl mx-auto">
+
+                <div class="bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-ffrs-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <h2 class="text-lg md:text-xl font-bold text-gray-800">Programme Officiel</h2>
+                    </div>
+
+                    <div class="text-center mb-3 md:mb-4">
+                        <a href="programme-CDF.pdf" target="_blank" class="block">
+                            <img src="images/programme-cdf-indoor-compresse.jpg"
+                                 alt="Programme France Indoor 2026"
+                                 class="mx-auto rounded-lg shadow-md w-full max-w-[450px] hover:opacity-90 transition-opacity cursor-pointer">
+                        </a>
+                    </div>
+
+                    <p class="text-xs md:text-sm text-gray-600 text-center mb-4">
+                        Cliquez sur l'image pour agrandir
+                    </p>
+
+                    <div class="text-center">
+                        <a href="programme-CDF.pdf"
+                           download="Programme-France-Indoor-2026.pdf"
+                           class="inline-flex items-center gap-2 bg-ffrs-blue text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-xs md:text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Télécharger le programme (PDF - 145 Ko)
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================= -->
+    <!-- FOOTER                  -->
+    <!-- ======================= -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-6 md:py-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6">
+
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Liens rapides</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-gray-300 hover:text-blue-400 transition-colors">Accueil</a></li>
+                        <li><a href="resultats.html" class="text-gray-300 hover:text-blue-400 transition-colors">Résultats</a></li>
+                        <li><a href="infos-pratiques.html" class="text-gray-300 hover:text-blue-400 transition-colors">Infos Pratiques</a></li>
+                        <li><a href="https://ffroller-skateboard.fr" target="_blank" rel="noopener" class="text-gray-300 hover:text-blue-400 transition-colors">FFRS - Fédération</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact & Réseaux sociaux</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        <strong class="text-blue-400">Email :</strong>
+                        <a href="mailto:contact@rollerfranceindoor.fr" class="text-gray-300 hover:underline break-all">
+                            contact@rollerfranceindoor.fr
+                        </a>
+                    </p>
+
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/rollerfranceindoor/"
+                           target="_blank"
+                           rel="noopener"
+                           class="text-gray-300 hover:text-pink-500 transition"
+                           aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.youtube.com/@rollerfranceindoor"
+                           target="_blank"
+                           rel="noopener"
+                           class="text-gray-300 hover:text-red-500 transition"
+                           aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.facebook.com/profile.php?id=61582929795793"
+                           target="_blank"
+                           rel="noopener"
+                           class="text-gray-300 hover:text-blue-500 transition"
+                           aria-label="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-700 pt-4 md:pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-gray-400 gap-2">
+                    <p>
+                        © 2026 France Marathon. Tous droits réservés.
+                        — Icônes : <a href="https://www.flaticon.com" target="_blank" rel="noopener" class="hover:underline">Freepik - Flaticon</a>
+                    </p>
+                    <p>
+                        Développé par Stéphane Le Meur · Propulsé par
+                        <a href="https://laravel.com" target="_blank" rel="noopener" class="text-red-400 hover:underline">Laravel</a>
+                    </p>
+                </div>
+            </div>
+
         </div>
-
-        <div x-show="open" class="md:hidden pb-4 space-y-2">
-            <a href="#" class="block">Accueil</a>
-            <a href="#" class="block font-bold">Programme</a>
-            <a href="#" class="block">Résultats</a>
-            <a href="#" class="block">Photos</a>
-        </div>
-
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="bg-ffrs-blue text-white text-center py-10">
-    <h2 class="text-3xl font-black">Programme</h2>
-    <p class="mt-2">Horaires des courses - 21 & 22 février 2026</p>
-</section>
-
-<!-- CONTENU -->
-<main class="container mx-auto px-4 py-10">
-
-    <div class="max-w-xl mx-auto bg-white shadow-lg rounded-lg p-6 text-center">
-
-        <h3 class="font-bold text-lg mb-4">Programme Officiel</h3>
-
-        <a href="documents/programme-CDF.pdf" target="_blank">
-            <img src="images/programme.jpg"
-                 class="mx-auto rounded shadow hover:opacity-90 transition"
-                 alt="Programme">
-        </a>
-
-        <p class="text-sm text-gray-500 mt-3">Cliquez pour agrandir</p>
-
-        <a href="documents/programme-CDF.pdf"
-           class="inline-block mt-4 bg-ffrs-blue text-white px-4 py-2 rounded hover:bg-blue-700">
-            Télécharger le PDF
-        </a>
-
-    </div>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white text-center py-6 mt-10">
-    <p class="text-sm">© 2026 France Indoor</p>
-</footer>
+    </footer>
 
 </body>
 </html>

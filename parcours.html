@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - France Marathon 2026</title>
+    <title>Parcours - France Marathon 2026</title>
 
     <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/style.css">
@@ -26,7 +26,7 @@
                              alt="Logo FFRS"
                              class="h-8 w-auto">
                     </a>
-                    <a href="https://www.instagram.com/roller_skating_launacais/">
+                    <a href="index.html">
                         <div class="w-12 h-12 rounded-full border border-black overflow-hidden bg-white">
                             <img src="images/logos/rsl.png"
                                  alt="Logo RSL"
@@ -59,17 +59,17 @@
                         CHAMPIONNAT DE FRANCE MARATHON
                     </span>
                     <span class="block font-bold shimmer-text text-base lg:text-xl leading-tight">
-                        PATINAGE DE VITESSE
+                        ROLLER COURSE
                     </span>
                     <span class="block font-bold shimmer-text text-base lg:text-xl leading-tight mt-1">
                         2026
                     </span>
                 </a>
 
-                <a href="https://www.instagram.com/roller_skating_launacais/" class="flex-shrink-0">
+                <a href="index.html" class="flex-shrink-0">
                     <div class="w-20 h-20 lg:w-28 lg:h-28 rounded-full border border-black overflow-hidden bg-white">
                         <img src="images/logos/rsl.png"
-                             alt="Logo RSL"
+                                 alt="Logo RSL"
                              class="w-full h-full object-cover">
                     </div>
                 </a>
@@ -86,22 +86,18 @@
 
             <!-- DESKTOP -->
             <div class="hidden md:flex items-center justify-center gap-6 lg:gap-8 py-3">
-                <a href="index.html" class="text-white hover:text-orange-300 transition font-medium text-orange-400 font-semibold">
+                <a href="index.html" class="text-white hover:text-orange-300 transition font-medium">
                     Accueil
                 </a>
-                <a href="programme.html" class="text-white hover:text-orange-300 transition font-medium">
-                    Programme
-                </a>
-                <a href="parcours.html" class="text-white hover:text-orange-300 transition font-medium">
-                    Parcours
-                </a>
-                <a href="resultats.html" class="text-white hover:text-orange-300 transition font-medium">
-                    Résultats
+                <a href="programme.html" class="text-white hover:text-orange-300 transition font-medium text-orange-400 font-semibold">
+                    Programme             
+                <a href="leparcours.html" class="text-white hover:text-orange-300 transition font-medium">
+                    Le Parcours
                 </a>
                 <a href="infos-pratiques.html" class="text-white hover:text-orange-300 transition font-medium">
                     Infos Pratiques
                 </a>
-
+                
             </div>
 
             <!-- MOBILE -->
@@ -127,17 +123,13 @@
                  x-transition:leave-start="opacity-100 translate-y-0"
                  x-transition:leave-end="opacity-0 -translate-y-2"
                  class="pb-4 space-y-1">
-                <a href="index.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition bg-blue-800 font-semibold">
+                <a href="index.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
                     Accueil
                 </a>
-                <a href="programme.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
-                    Programme
-                </a>
-                <a href="parcours.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
-                    Parcours
-                </a>
-                <a href="resultats.html" class="text-white hover:text-orange-300 transition font-medium">
-                    Résultats
+                <a href="programme.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition bg-blue-800 font-semibold">
+                    Programme               
+                <a href="photos.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
+                    Photos
                 </a>
                 <a href="infos-pratiques.html" class="block py-2 px-4 rounded hover:bg-blue-800 transition">
                     Infos Pratiques
@@ -147,53 +139,61 @@
 
         </div>
     </nav>
+
     <!-- ======================= -->
     <!-- MAIN : Contenu          -->
     <!-- ======================= -->
     <main>
         <section class="bg-ffrs-blue text-white py-8 md:py-12 text-center">
             <div class="container mx-auto px-4">
-                <h1 class="text-2xl md:text-4xl lg:text-5xl font-black uppercase">Programme</h1>
-                <p class="text-sm md:text-lg mt-2 md:mt-4">Horaires des courses - 21 & 22 février 2026</p>
+                <h1 class="text-2xl md:text-4xl lg:text-5xl font-black uppercase">Parcours</h1>
+                <p class="text-sm md:text-lg mt-2 md:mt-4">Les parcours des courses - Marathon & Jeunes</p>
             </div>
         </section>
 
-        <section class="container mx-auto px-4 py-8 md:py-12">
+        <section>
             <div class="max-w-4xl mx-auto">
 
-                <div class="bg-white rounded-lg shadow-lg p-4 md:p-6">
+                <div class="bg-white rounded-lg  p-4 md:p-6">
                     <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                        <svg class="w-6 h-6 md:w-8 md:h-8 text-ffrs-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-8" viewBox="0 -960 960 960">
+                            <path d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z"/>
                         </svg>
-                        <h2 class="text-lg md:text-xl font-bold text-gray-800">Programme Officiel</h2>
+                        <h2 class="text-lg md:text-xl font-bold text-gray-800">Parcours Marathon</h2>
                     </div>
 
                     <div class="text-center mb-3 md:mb-4">
-                        <a href="programme-CDF.pdf" target="_blank" class="block">
-                            <img src="images/programme-cdf-indoor-compresse.jpg"
-                                 alt="Programme France Indoor 2026"
+                        <a href="images/leparcours.jpeg" target="_blank" class="block" rel="noopener">
+                            <img src="images/leparcours.jpeg"
+                                 alt="Parcours Marathon"
                                  class="mx-auto rounded-lg shadow-md w-full max-w-[450px] hover:opacity-90 transition-opacity cursor-pointer">
                         </a>
+                    </div>   
+                    
+                    <div class="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-8" viewBox="0 -960 960 960">
+                            <path d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z"/>
+                        </svg>
+                        <h2 class="text-lg md:text-xl font-bold text-gray-800">Parcours Jeunes</h2>
                     </div>
 
-                    <p class="text-xs md:text-sm text-gray-600 text-center mb-4">
-                        Cliquez sur l'image pour agrandir
-                    </p>
-
-                    <div class="text-center">
-                        <a href="programme-CDF.pdf"
-                           download="Programme-France-Indoor-2026.pdf"
-                           class="inline-flex items-center gap-2 bg-ffrs-blue text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-xs md:text-sm">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                            </svg>
-                            Télécharger le programme (PDF - 145 Ko)
+                    <div class="text-center mb-3 md:mb-4">
+                        <a href="images/parcoursjeunes.jpeg" target="_blank" class="block" rel="noopener">
+                            <img src="images/parcoursjeunes.jpeg"
+                                 alt="Parcours Marathon"
+                                 class="mx-auto rounded-lg shadow-md w-full max-w-[450px] hover:opacity-90 transition-opacity cursor-pointer">
                         </a>
-                    </div>
+                    </div>   
+                    
                 </div>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Q88tLFblB4M?si=SqUu4gPmN6jjGTj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="https://www.youtube.com/watch?v=Q88tLFblB4M" target="_blank">
+                <img src="https://img.youtube.com/vi/Q88tLFblB4M/maxresdefault.jpg" 
+                    alt="Voir la vidéo" style="width:100%; cursor:pointer;">
+                </a>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Q88tLFblB4M?si=d1y8yuR3EyaaM_2l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
+            
+       
         </section>
     </main>
 
@@ -219,13 +219,13 @@
                     <h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact & Réseaux sociaux</h3>
                     <p class="text-gray-300 text-sm mb-4">
                         <strong class="text-blue-400">Email :</strong>
-                        <a href="mailto:rollerskatinglaunacais@gmail.com" class="text-gray-300 hover:underline break-all">
-                            rollerskatinglaunacais@gmail.com
+                        <a href="mailto:contact@rollerfranceindoor.fr" class="text-gray-300 hover:underline break-all">
+                            contact@rollerfranceindoor.fr
                         </a>
                     </p>
 
                     <div class="flex gap-4">
-                        <a href="https://www.instagram.com/rollerfrancemarathon_2026/"
+                        <a href="https://www.instagram.com/rollerfranceindoor/"
                            target="_blank"
                            rel="noopener"
                            class="text-gray-300 hover:text-pink-500 transition"
@@ -235,7 +235,7 @@
                             </svg>
                         </a>
 
-                        <a href="https://www.youtube.com/@rollerskatinglaunacaisrsl4462"
+                        <a href="https://www.youtube.com/@rollerfranceindoor"
                            target="_blank"
                            rel="noopener"
                            class="text-gray-300 hover:text-red-500 transition"
@@ -245,7 +245,7 @@
                             </svg>
                         </a>
 
-                        <a href="https://www.facebook.com/rsl31"
+                        <a href="https://www.facebook.com/profile.php?id=61582929795793"
                            target="_blank"
                            rel="noopener"
                            class="text-gray-300 hover:text-blue-500 transition"
@@ -266,7 +266,8 @@
                         — Icônes : <a href="https://www.flaticon.com" target="_blank" rel="noopener" class="hover:underline">Freepik - Flaticon</a>
                     </p>
                     <p>
-                        Développé par Stéphane Le Meur / Cyril Cassou                        
+                        Développé par Stéphane Le Meur · Propulsé par
+                        <a href="https://laravel.com" target="_blank" rel="noopener" class="text-red-400 hover:underline">Laravel</a>
                     </p>
                 </div>
             </div>
